@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<body>
+<center><br><br><br><br>
+<fieldset>Registration
+<legend>Form</legend>
+<div class="user" ng-controller="myctrl">
+Username:<input type="text" ng-model="username"><br>
+Password:<input type="text" ng-model="password"><br>
+<input type="button" ng-model="buton" value="Submit">
+</div>
+</fieldset>
+</center>
+
+<div class="showw" ng-controller="validate" ng-click="myFunc()">
+Welcome {{ username }}
+</div>
+<script>
+var app=angular.module("myApp",[]);
+app.controller("myctrl",function($scope) {
+      $scope.username;
+      $scope.password; });
+</script>
+</body>
+</html>
+
+
+
+

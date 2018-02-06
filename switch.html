@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<body ng-app="">
+<center>
+<fieldset>FORM<br><br>
+My favorite topic is:
+<select ng-model="myVar2">
+  <option value="dogs">Dogs
+  <option value="tuts">Tutorials
+  <option value="cars">Cars
+</select>
+
+<hr>
+<div ng-switch="myVar2">
+  <div ng-switch-when="dogs">
+     <h1>Dogs</h1>
+     <p>Welcome to a world of dogs.</p>
+  </div>
+  <div ng-switch-when="tuts">
+     <h1>Tutorials</h1>
+     <p>Learn from examples.</p>
+  </div>
+  <div ng-switch-when="cars">
+     <h1>Cars</h1>
+     <p>Read about cars.</p>
+  </div>
+Show HTML: <input type="checkbox" ng-model="myVar1">
+<hr>
+<div ng-show="myVar1">
+<h1>Welcome</h1>
+<p>Welcome to my home.</p>
+</div>
+
+<form>
+Pick a topic:
+<input type="radio" ng-model="myVar" value="dogs">Dogs
+<input type="radio" ng-model="myVar" value="tuts">Tutorials
+<input type="radio" ng-model="myVar" value="cars">Cars
+</form>
+<hr>
+<div ng-switch="myVar">
+  <div ng-switch-when="dogs">
+     <h1>Dogs</h1>
+     <p>Welcome to a world of dogs.</p>
+  </div>
+  <div ng-switch-when="tuts">
+     <h1>Tutorials</h1>
+     <p>Learn from examples.</p>
+  </div>
+  <div ng-switch-when="cars">
+     <h1>Cars</h1>
+     <p>Read about cars.</p>
+  </div>
+<div ng-model="var">
+Name: <input type="text" ng-model="name" required><br>
+<br>Entered name is = {{ name }}
+</div><br><br>
+<input type="button" ng-model="buton" value="submit" >
+</center>
+</fieldset>
+</body>
+</html>

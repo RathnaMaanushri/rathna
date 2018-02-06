@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<body>
+<div ng-app="" ng-init="length= ;breadth= ;">
+<h3>Perimeter of a rectangle</h3>
+Length:<input type="number" ng-model="length">
+Breadth:<input type="number" ng-model="breadth">
+<p><b>Total: </b>{{ length * breadth }} </p>
+</div>
+</body>
+</html>

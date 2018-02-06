@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl" ng-init="gen=[ { name: 'Female'},
+						   { name: 'Male'} ]">
+FirstName:<input type="text" ng-model="firstname"><br>
+LastName:<input type="text" ng-model="lastname"><br>
+<br>
+FullName={{ firstname + " " + lastname }}<br>
+</div>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+    $scope.firstName  ;
+    $scope.lastName ;
+});
+</script>
+</body>
+</html>
