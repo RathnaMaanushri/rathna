@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/C7C63BF2-2CEB-D843-864D-F81A3359D293/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/392D9533A18F-D468-348D-BEC2-2FB36C7C/abn/main.css"/><script src="angular.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('loginctrl', function($scope,$rootScope) {
+$scope.login=true;
+ $rootScope.home = false;
+     $scope.userName='';
+     $scope.pwd='';
+$scope.toggle=function(){
+   if($scope.userName=="rathna" && $scope.pwd=="maanushri"){
+alert($rootScope.home);
+    $rootScope.home=true;
+    $scope.login=false;
+  }  }
+});
+app.controller('welctrl',function($scope){
+});
+</script>
+
+<body>
+
+<div  ng-controller="loginctrl" ng-show="login">
+User Name: <input type="text" ng-model="userName"><br>
+password: <input type="password" ng-model="pwd"><br>
+<br>
+<button ng-click="toggle()">submit</button>
+</div>
+
+
+<div ng-controller="welctrl" ng-show="home">
+<p >
+<h2>welcome to home page  <h2>
+</p>
+</div>
+
+
+</body>
+</html>
