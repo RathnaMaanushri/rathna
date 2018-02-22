@@ -1,23 +1,40 @@
 <html>
-<form action="/action_page.php">
+<head>
+<script>
+function getvalues(){
+document.getElementById('demoname').innerHTML=document.getElementById('name').value;
+document.getElementById('demoradio').innerHTML=document.getElementById('gender').value;
+document.getElementById('demodrop').innerHTML=document.getElementById('drop').value;
+document.getElementById('demotext').innerHTML=document.getElementById('tearea').value;
+}
+</script>
+</head>
+<form action="#">
 <center><h2>Registration</h2></center>
 <body><br><br><br><br><br>
-<fieldset><legend><h2>Form</h2></legend><center><h3>Name: <input type="text" name="Name" required><br><br><br><br>
-Gender: <input type="checkbox" name="Gender" value="Female" required>Female
-            <input type="checkbox" name="Gender" value="Male" >Male<br><br>
-</h3><select>
-<option value="scooty">scooty</option>
-<option value="Car">Car</option>
-<option value="Activa">Activa</option>
-<option value="Bike">Bike</option>
+<fieldset><legend><h2>Form</h2></legend><center><h3>Name: <input type="text" id="name" name="Name" required><br><br><br><br>
+<p id="demoname"></p>
+Gender: <input type="checkbox" id="gender" name="Gender" value="Female" >Female
+            <input type="checkbox" id="gender" name="Gender" value="Male" >Male<br><br>
+<p id="demoradio"></p>
+</h3>
+
+<select id="drop">
+<option value="scooty"  required>scooty</option>
+<option value="Car"  required>Car</option>
+<option value=" Activa"  required>Activa</option>
+<option value="Bike"  >Bike</option>
+
 </select><br><br>
+<p id="demodrop"></p>
 <form>
-  <input type="radio" name="vehicle" value="2 wheeler"> 2 wheeler
-  <input type="radio" name="vehicle" value="4 wheeler"> 4 wheeler
-  <input type="radio" name="vehicle" value="other"> Other  <br><br>
-<button type="button" onclick="alert('Click submit!')">Click me!</button>
-<input type="submit" value="submit">
-
-</form> 
-
- 
+  <input type="radio" name="vehicle"  id="check1" value="2 wheeler" required> 2 wheeler
+  <input type="radio" name="vehicle" id="check2" value="4 wheeler" required> 4 wheeler
+  <input type="radio" name="vehicle" id="check3"  value="other"> Other  <br><br>
+</form>
+<p id="democheck"></p>
+<textarea rows="5" cols="60" id="tearea">
+</textarea>
+<p id="demotext"></p>
+<input type="Submit" value='Submit' onclick="getvalues();return false;"> 
+</html>
