@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html>
+<head>
+
+ <script src = "angular.min.js"></script>
+ <center><h1>List of watches</h1></center>
+       <div ng-app = "mainApp" ng-controller = "watchController">
+	   <p id="wtlst"></p>
+	    	<center>	<button ng-click = "list()">List</button></center>
+                    
+
+
+ <script>
+         var mainApp = angular.module("mainApp", []);
+         
+         mainApp.controller('watchController', function($scope,$http) {
+            $scope.list = function(){              
+			   
+			     $http({
+				    'url':'http://localhost:8080/list',
+					'method': 'GET'				
+				 
+				 }).then(function(response){
+				    $scope.wtlst=response.data;
+					//alert(JSON.stringify(response));
+				 })
+			   
+            }
+            
+            //$scope.reset();
+         });
+      </script>
+	  <div class="srt" ng-repeat="lst in wtlst">
+    <center>   Watchname:{{lst.watchname}} 
+		       Price    :{{lst.price}}
+			 image_url:{{lst.img_url}}<br><br></center>
+	  </body>
+		</html>
